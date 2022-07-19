@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="89.0">com.enation.app.javashop.service.base.plugin.sms.SmsZtPlugin</node>
+    <node x="0.0" y="0.0">com.enation.app.javashop.service.base.plugin.sms.SmsPlatform</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.enation.app.javashop.service.base.plugin.sms.SmsZtPlugin" target="com.enation.app.javashop.service.base.plugin.sms.SmsPlatform">
+      <point x="0.0" y="-19.5" />
+      <point x="0.0" y="19.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="192.5" y="90.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

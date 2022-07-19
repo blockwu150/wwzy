@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.nervos.ckb:serialization:2.0.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nervos/ckb/serialization/2.0.2/serialization-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nervos/ckb/serialization/2.0.2/serialization-2.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/nervos/ckb/serialization/2.0.2/serialization-2.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

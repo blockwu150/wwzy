@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.enation.app.javashop.mapper.trade.BillItemMapper">
+
+    <cache-ref namespace="com.enation.app.javashop.mapper.trade.BillItemMapper"/>
+
+    <!--更新结算项的状态-->
+    <update id="updateBillItem">
+        UPDATE es_bill_item SET bill_id = #{billId} WHERE seller_id = #{sellerId} AND bill_id IS NULL AND (add_time &lt; #{lastTime} and add_time &gt;= #{startTime})
+    </update>
+
+    <!--查询结算单项的统计结果-->
+    <select id="countBillResultMap" resultType="com.enation.app.javashop.model.orderbill.vo.BillResult" useCache="false">
+        select
+         sum(case when payment_type = 'online' and item_type = 'PAYMENT'  then price else 0 end ) online_price ,
+         sum(case when payment_type = 'online' and item_type = 'REFUND' then price else 0 end ) online_refund_price ,
+         sum(case when payment_type = 'cod' and item_type = 'PAYMENT' then price else 0 end ) cod_price,
+         sum(case when payment_type = 'cod' and item_type = 'REFUND' then price else 0 end ) cod_refund_price,seller_id,
+         sum(case when item_type = 'PAYMENT' then site_coupon_price*coupon_commission else 0 end ) as site_coupon_commi
+         from es_bill_item where `status` = 0 and (add_time &lt; #{lastTime} and add_time &gt;= #{startTime}) and bill_id is null group by seller_id
+    </select>
+
+</mapper>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.enation.app.javashop.mapper.member.ShopCatMapper">
+
+    <!--获取当前分组所有的子分组(包括当前分组)-->
+    <select id="getChildren" resultType="java.util.Map" useCache="false">
+        select shop_cat_id from es_shop_cat ${ew.customSqlSegment}
+    </select>
+
+</mapper>

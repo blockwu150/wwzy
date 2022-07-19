@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_ADDITIONAL_VM_OPTIONS" value="-Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=512m" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="javashop-core" />
+        <module name="framework" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="framework" target="1.8" />
+      <module name="javashop-core" target="1.8" />
+      <module name="nft.storage-wwzy" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="EclipseCompilerSettings">
+    <option name="GENERATE_NO_WARNINGS" value="true" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="framework" options="-parameters" />
+      <module name="javashop-core" options="-parameters" />
+      <module name="nft.storage-wwzy" options="-Xlint:all -J-Xss4m" />
+    </option>
+  </component>
+</project>

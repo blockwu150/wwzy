@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="261.0" y="89.0">com.enation.app.javashop.service.base.plugin.express.ShowApiPlugin</node>
+    <node x="0.0" y="89.0">com.enation.app.javashop.service.base.plugin.express.Kuaidi100Plugin</node>
+    <node x="124.5" y="0.0">com.enation.app.javashop.service.base.plugin.express.ExpressPlatform</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.enation.app.javashop.service.base.plugin.express.ShowApiPlugin" target="com.enation.app.javashop.service.base.plugin.express.ExpressPlatform">
+      <point x="0.0" y="-19.5" />
+      <point x="369.5" y="64.0" />
+      <point x="305.25" y="64.0" />
+      <point x="60.25" y="19.5" />
+    </edge>
+    <edge source="com.enation.app.javashop.service.base.plugin.express.Kuaidi100Plugin" target="com.enation.app.javashop.service.base.plugin.express.ExpressPlatform">
+      <point x="0.0" y="-19.5" />
+      <point x="120.5" y="64.0" />
+      <point x="184.75" y="64.0" />
+      <point x="-60.25" y="19.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="472.0" y="180.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

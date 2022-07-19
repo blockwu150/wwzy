@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.enation.app.javashop.mapper.member.MemberAskMapper">
+
+    <cache-ref namespace="com.enation.app.javashop.mapper.member.MemberAskMapper"/>
+
+    <!-- 获取与会员商品咨询相关的其它咨询 -->
+    <select id="listGoodsAsks" resultType="com.enation.app.javashop.model.member.vo.MemberAskVO" useCache="false">
+        select * from es_member_ask ${ew.customSqlSegment}
+    </select>
+
+    <!-- 修改会员商品咨询回复数量 -->
+    <update id="updateReplyNum">
+        update es_member_ask set reply_num=reply_num + #{num} where ask_id = #{ask_id}
+    </update>
+
+    <!--查询咨询列表-->
+    <select id="queryList" resultType="com.enation.app.javashop.model.member.dos.MemberAsk" useCache="false">
+        select * from es_member_ask
+        <where>
+            status = #{status}
+            <if test="param.keyword != null and param.keyword != ''">
+                and (content like #{param.keyword} or goods_name like #{param.keyword} or member_name like #{param.keyword})
+            </if>
+            <if test="param.memberId != null">
+                and member_id = #{param.memberId}
+            </if>
+            <if test="param.replyStatus != null and param.replyStatus != ''">
+                and reply_status = #{param.replyStatus}
+            </if>
+            <if test="param.sellerId != null and param.sellerId != 0">
+                and seller_id = #{param.sellerId}
+            </if>
+            <if test="param.goodsName != null ">
+                and goods_name like concat('%',#{param.goodsName},'%')
+            </if>
+            <if test="param.memberName != null ">
+                and member_name like concat('%',#{param.memberName},'%')
+            </if>
+            <if test="param.content != null ">
+                and content like concat('%',#{param.content},'%')
+            </if>
+            <if test="param.authStatus != null ">
+                and auth_status = #{param.authStatus}
+            </if>
+            <if test="param.startTime != null and param.startTime != 0">
+                and create_time >= #{param.startTime}
+            </if>
+            <if test="param.endTime != null and param.endTime != 0">
+                and create_time &lt;= #{param.endTime}
+            </if>
+            <if test="param.anonymous != null ">
+                and anonymous = #{param.anonymous}
+            </if>
+            order by create_time desc
+        </where>
+    </select>
+
+</mapper>
